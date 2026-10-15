@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e1d97145461dcde705d7a0be19cb304e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e1d97145461dcde705d7a0be19cb304e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e1d97145461dcde705d7a0be19cb304e = L.map(
+                "map_e1d97145461dcde705d7a0be19cb304e",
+                {
+                    center: [38.0, -95.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f8db0ae6b3c8b6e011b2286eb866d739 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f8db0ae6b3c8b6e011b2286eb866d739.addTo(map_e1d97145461dcde705d7a0be19cb304e);
+        
+    
+            var marker_12ea6d5cf4d114961685231937bc1b59 = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_e1d97145461dcde705d7a0be19cb304e);
+        
+    
+        var popup_f7f289a1643de27cce74db8a48557af7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fa0a92a93a336f71e3a744898e8f26e = $(`<div id="html_0fa0a92a93a336f71e3a744898e8f26e" style="width: 100.0%; height: 100.0%;">New York</div>`)[0];
+                popup_f7f289a1643de27cce74db8a48557af7.setContent(html_0fa0a92a93a336f71e3a744898e8f26e);
+            
+        
+
+        marker_12ea6d5cf4d114961685231937bc1b59.bindPopup(popup_f7f289a1643de27cce74db8a48557af7)
+        ;
+
+        
+    
+    
+            marker_12ea6d5cf4d114961685231937bc1b59.bindTooltip(
+                `<div>
+                     Click for New York
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17e887637145c95de1bc8d7aa2b94ba6 = L.marker(
+                [34.0522, -118.2437],
+                {
+}
+            ).addTo(map_e1d97145461dcde705d7a0be19cb304e);
+        
+    
+        var popup_b9990630f5ce1f269f18b72de76c75f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5f882b9f14f00d82208b7035be66dad = $(`<div id="html_b5f882b9f14f00d82208b7035be66dad" style="width: 100.0%; height: 100.0%;">Los Angeles</div>`)[0];
+                popup_b9990630f5ce1f269f18b72de76c75f7.setContent(html_b5f882b9f14f00d82208b7035be66dad);
+            
+        
+
+        marker_17e887637145c95de1bc8d7aa2b94ba6.bindPopup(popup_b9990630f5ce1f269f18b72de76c75f7)
+        ;
+
+        
+    
+    
+            marker_17e887637145c95de1bc8d7aa2b94ba6.bindTooltip(
+                `<div>
+                     Click for Los Angeles
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9ac4f24c10236950c96777ebf73e0aaa = L.marker(
+                [41.8781, -87.6298],
+                {
+}
+            ).addTo(map_e1d97145461dcde705d7a0be19cb304e);
+        
+    
+        var popup_a54fd2e89fdcb04bf25fa2837657ad93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7827125c397b2ed9941c966a2b4eff43 = $(`<div id="html_7827125c397b2ed9941c966a2b4eff43" style="width: 100.0%; height: 100.0%;">Chicago</div>`)[0];
+                popup_a54fd2e89fdcb04bf25fa2837657ad93.setContent(html_7827125c397b2ed9941c966a2b4eff43);
+            
+        
+
+        marker_9ac4f24c10236950c96777ebf73e0aaa.bindPopup(popup_a54fd2e89fdcb04bf25fa2837657ad93)
+        ;
+
+        
+    
+    
+            marker_9ac4f24c10236950c96777ebf73e0aaa.bindTooltip(
+                `<div>
+                     Click for Chicago
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

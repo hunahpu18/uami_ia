@@ -1,0 +1,23 @@
+[project]
+name = "tarea2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "altair>=6.3.0",
+    "duckdb>=1.5.6",
+    "folium>=0.20.0",
+    "ipython>=9.17.1",
+    "marimo>=0.25.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "polars>=2.0.0",
+    "pyarrow>=26.0.0",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "sqlglot>=30.23.0",
+    "vegafusion>=2.0.3",
+    "vl-convert-python>=1.9.0.post1",
+]

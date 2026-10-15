@@ -69,7 +69,6 @@ def _(pd):
     columnas_hechos = ['hora_evento','tipo_evento','folio','latitud','longitud','tipo_de_interseccion',
     'clasificacion_de_la_vialidad','dia','personas_fallecidas','personas_lesionadas','prioridad']
     hechosDf = hechosDf[columnas_hechos].reset_index(drop=True)
-
     return (hechosDf,)
 
 
@@ -161,7 +160,8 @@ def _(EPS_KM, MIN_SAMPLES, calcAndShow, df):
 def _(DBSCAN, EARTH_RADIUS, df, np, pd):
     coords = np.radians(df[["latitud","longitud"]].to_numpy())
     features = ['noche','transporte','fin','choque', 'peaton', 'otro']
-    for eps,minS in [(0.15,15),(0.15,20),(0.1,25)]:
+    #for eps,minS in [(0.15,15),(0.15,20),(0.1,25)]:
+    for eps,minS in [(0.15,15)]:
         dbscan = DBSCAN(eps = eps/EARTH_RADIUS, min_samples = minS, metric='haversine', algorithm='ball_tree', n_jobs=-1)
         labels = dbscan.fit_predict(coords)
         tmp = df.copy()
@@ -181,11 +181,29 @@ def _(DBSCAN, EARTH_RADIUS, df, np, pd):
         print(sizes.describe(percentiles=[0.1,0.25,0.5,0.75,0.9]))
         #print('clusters less than 30',round((sizes<30).mean(),3))
 
-        hotspot = tmp.groupby('cluster')[features].mean()
+        hotspot = tmp.groupby('cluster', as_index=False)[features].mean()
         hotspot['hechos'] = tmp.groupby('cluster').size()
         hotspot = hotspot[hotspot['hechos']>=30]
         print(hotspot[features].describe().T)
-    hotspot
+    hotspot.reset_index()
+    return features, hotspot
+
+
+@app.cell
+def _(features, hotspot, np, pd):
+    h = hotspot.copy()
+    print(h.columns)
+    h = h[h['cluster']>=0]
+    print(type(h))
+    n = h['hechos'].astype('Int64')
+    results = []
+    for f in features:
+        p = np.average(h[f], weights=n)
+        observed_sd = h[f].std(ddof=1)
+        expected = np.sqrt(np.mean(p*(1-p)/n))
+        results.append({'feature':f, "observed":observed_sd, 'expected':expected,'ratio':observed_sd/expected})
+
+    pd.DataFrame(results)
     return
 
 

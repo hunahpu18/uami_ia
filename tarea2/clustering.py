@@ -46,8 +46,8 @@ def _(data):
 
 
 @app.cell
-def _(data, np, pd):
-    data_clean = data.dropna().sample(n=5000,random_state=43)
+def _(RANDOM, data, np, pd):
+    data_clean = data.dropna().sample(n=5000,random_state=RANDOM)
     data_clean['hora'] = np.sin(pd.to_datetime(data_clean['hora_evento'], format='%H:%M:%S').dt.hour*np.pi/24*2)
     data_clean.isna().sum()
     return (data_clean,)
